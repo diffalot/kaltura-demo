@@ -22,6 +22,8 @@
   -->
   <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
 
+  <link href='http://fonts.googleapis.com/css?family=Nobile:regular,bold|Neuton|Inconsolata' rel='stylesheet' type='text/css'>
+
 
   <!-- Place favicon.ico and apple-touch-icon.png in the root of your domain and delete these references -->
   <link rel="shortcut icon" href="/favicon.ico">
@@ -29,12 +31,19 @@
 
 
   <!-- CSS : implied media="all" -->
+  <link rel="stylesheet" href="css/reset.css?v=1">
+  <link rel="stylesheet" href="css/960.css?v=1">
   <link rel="stylesheet" href="css/style.css?v=1">
+  <link rel="stylesheet" href="css/media.css?v=1">
+
+  <!-- Source Code Hightlighting -->
+  <link rel="stylesheet" href="js/syntaxhighlighter/styles/shCore.css">
+  <link rel="stylesheet" href="js/syntaxhighlighter/styles/shThemeDefault.css">
+  <link rel="stylesheet" href="js/syntaxhighlighter/styles/shCoreDefault.css">
+
 
   <!-- For the less-enabled mobile browsers like Opera Mini -->
   <link rel="stylesheet" media="handheld" href="css/handheld.css?v=1">
-
- 
   <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
   <script src="js/modernizr-1.5.min.js"></script>
 
@@ -48,19 +57,48 @@
 <!--[if IE 9 ]>    <body class="ie9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <body> <!--<![endif]-->
 
-  <div id="container">
+  <div id="container" class="container_12">
     <header>
-
+      <div class="grid_12">
+        <h1 id="title"><a href="/.">Kaltura's HTML5 Media Library</a></h1>
+      </div>
     </header>
+    <div class="clear">&nbsp;</div>
     
     <div id="main">
+      
+      <div id="code">
+        
+        <div class="grid_4">
+          <div id="demo-list">&nbsp;</div>
+        </div>
+        <div class="grid_8">
+          <div id="demo-docs">&nbsp;</div>
+        </div>
+        <div class="clear">&nbsp;</div>
+        
+        <div id="demonstration">&nbsp;</div>
+        <div class="clear">&nbsp;</div>
+        
+        <div id="button-pane" class="grid_10">
+          <button id="update-preview">Update Preview</button>
+        </div>
+        <div class="clear">&nbsp;</div>
 
+        <div id="source-container" class="grid_11">
+          <div id="demo-source">
+            <textarea id="source-code"></textarea>
+            <div id="source"></div>
+          </div>
+        </div>
+        <div class="clear">&nbsp;</div>
+      </div>
     </div>
-    
+  </div> <!--! end of #container -->
+
     <footer>
 
     </footer>
-  </div> <!--! end of #container -->
 
 
   <!-- Javascript at the bottom for fast page loading -->
@@ -69,20 +107,44 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
   <script>!window.jQuery && document.write('<script src="js/jquery-1.4.2.min.js"><\/script>')</script>
 
-
+  <!-- Load jQuery Plugins -->
   <script src="js/plugins.js?v=1"></script>
+
+  <!-- Use Sammy for bookmarkable routing -->
+  <script src="js/sammy/sammy.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Use Web Storage Lawnchair -->
+  <script src="js/Lawnchair/Lawnchair.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/Lawnchair/adaptors/LawnchairAdaptorHelpers.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/Lawnchair/adaptors/DOMStorageAdaptor.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Use CodeMirror for Editing with code coloring -->
+  <script src="js/codemirror/js/codemirror.js" type="text/javascript"></script>
+
+  <!-- iOS have to use a text area for editing
+       We should make this pretty by presenting 
+       <pre> blocks with an (edit) button -->
+  <script type="text/javascript" src="js/syntaxhighlighter/scripts/shCore.js"></script>
+  <script type="text/javascript" src="js/syntaxhighlighter/scripts/shBrushXml.js"></script>
+  <script type="text/javascript" src="js/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+  <script type="text/javascript" src="js/syntaxhighlighter/scripts/shBrushCss.js"></script>
+
+
+  <!-- Use Showdown to render Markdown into html -->
+  <script src="js/showdown.js" type="text/javascript"></script>
+
+
+  <!-- include the application -->
   <script src="js/script.js?v=1"></script>
 
   <!--[if lt IE 7 ]>
     <script src="js/dd_belatedpng.js?v=1"></script>
   <![endif]-->
 
-
   <!-- yui profiler and profileviewer - remove for production -->
   <script src="js/profiling/yahoo-profiling.min.js?v=1"></script>
   <script src="js/profiling/config.js?v=1"></script>
   <!-- end profiling code -->
-
 
   <!-- asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet 
        change the UA-XXXXX-X to be your site's ID -->
