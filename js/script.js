@@ -248,7 +248,7 @@ $(function(){
     $("#update-preview").bind('click', function() {
         if ( editor != undefined ) {
       source = editor.getCode();
-      iframe = window["preview-iframe"];
+      iframe = window.frames[1];
       iframe.document.open();
       iframe.document.write(source);
       iframe.document.close();
