@@ -1,0 +1,1892 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1255">
+<meta name=Generator content="Microsoft Word 12 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	text-align:right;
+	line-height:115%;
+	direction:rtl;
+	unicode-bidi:embed;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:0cm;
+	margin-right:36.0pt;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	text-align:right;
+	line-height:115%;
+	direction:rtl;
+	unicode-bidi:embed;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:0cm;
+	margin-right:36.0pt;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	line-height:115%;
+	direction:rtl;
+	unicode-bidi:embed;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0cm;
+	margin-right:36.0pt;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	line-height:115%;
+	direction:rtl;
+	unicode-bidi:embed;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0cm;
+	margin-right:36.0pt;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	text-align:right;
+	line-height:115%;
+	direction:rtl;
+	unicode-bidi:embed;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=Section1 dir=RTL>
+
+<p class=MsoNormal align=center dir=LTR style='text-align:center;direction:
+ltr;unicode-bidi:embed'><b><u><span style='font-size:16.0pt;line-height:115%'>Playlist
+documentation</span></u></b></p>
+
+<p class=MsoNormal dir=LTR style='text-align:left;direction:ltr;unicode-bidi:
+embed'><b><span style='font-size:16.0pt;line-height:115%'>Introduction:</span></b></p>
+
+<p class=MsoNormal dir=LTR style='text-align:left;direction:ltr;unicode-bidi:
+embed'><span style='font-size:16.0pt;line-height:115%'>The KUpload widget is a
+none graphical swf file that exposes an interface for uploading files to
+Kaltura network.</span></p>
+
+<p class=MsoNormal dir=LTR style='text-align:left;direction:ltr;unicode-bidi:
+embed'><span style='font-size:16.0pt;line-height:115%'>It exposes a set of
+configuration, API &amp; event for JS applications.</span></p>
+
+<p class=MsoNormal dir=LTR style='text-align:left;direction:ltr;unicode-bidi:
+embed'><span style='font-size:16.0pt;line-height:115%'>The only direct user
+interaction is the browse action.</span></p>
+
+<p class=MsoNormal dir=LTR style='text-align:left;direction:ltr;unicode-bidi:
+embed'><span style='font-size:16.0pt;line-height:115%'>Due to security
+restrictions in Flash Player v10, any browse operation must be triggered as a
+result of user-interaction, therefore, user must click the swf itself in order
+to show the file dialogue box.</span></p>
+
+<p class=MsoNormal dir=LTR style='text-align:left;direction:ltr;unicode-bidi:
+embed'><span style='font-size:16.0pt;line-height:115%'>To overcome this
+security restriction, it's advised not to use the browse() API function, but
+rather place the swf above the real HTML GUI that the user sees and sets its
+wmode to &quot;transparent&quot;, so that the actual &quot;click&quot; event is
+triggered from the flash and no API call is needed. </span></p>
+
+<p class=MsoNormal dir=LTR style='text-align:left;direction:ltr;unicode-bidi:
+embed'><span style='font-size:16.0pt;line-height:115%'>&nbsp;</span></p>
+
+<p class=MsoListParagraph dir=LTR style='margin-top:0cm;margin-right:0cm;
+margin-bottom:10.0pt;margin-left:18.0pt;text-align:left;text-indent:-18.0pt;
+direction:ltr;unicode-bidi:embed'><b><span style='font-size:16.0pt;line-height:
+115%'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></b><span
+dir=LTR></span><b><span style='font-size:16.0pt;line-height:115%'>Flashvars</span></b></p>
+
+<div align=left dir=ltr>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width="111%"
+ style='width:111.92%;border-collapse:collapse;border:none'>
+ <tr style='height:26.7pt'>
+  <td width="21%" nowrap valign=top style='width:21.94%;border:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:26.7pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><b><span
+  style='font-size:10.0pt'>Name</span></b></p>
+  </td>
+  <td width="44%" valign=top style='width:44.58%;border:solid black 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:26.7pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><b><span
+  style='font-size:10.0pt'>Description</span></b></p>
+  </td>
+  <td width="11%" valign=top style='width:11.92%;border:solid black 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:26.7pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><b><span
+  style='font-size:10.0pt'>Data type</span></b></p>
+  </td>
+  <td width="11%" valign=top style='width:11.88%;border:solid black 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:26.7pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><b><span
+  style='font-size:10.0pt'>UIConf applicable</span></b></p>
+  </td>
+  <td width="9%" valign=top style='width:9.68%;border:solid black 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:26.7pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><b><span
+  style='font-size:10.0pt'>Default value</span></b></p>
+  </td>
+ </tr>
+ <tr style='height:33.25pt'>
+  <td width="21%" nowrap valign=top style='width:21.94%;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>jsDelegate</span></p>
+  </td>
+  <td width="44%" valign=top style='width:44.58%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>The Object whose properties are each of the JS
+  callbacks.</span></p>
+  <p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>For Example:</span></p>
+  <p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>jsDelegate=myDelegate</span></p>
+  <p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>.</span></p>
+  <p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>.</span></p>
+  <p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>.</span></p>
+  <p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>var myDelegate = {};</span></p>
+  <p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>myDelegate.</span><span style='font-size:10.0pt'>uploadErrorHandler
+  = function()</span></p>
+  <p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>{</span></p>
+  <p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>    alert(&quot;upload error&quot;);</span></p>
+  <p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>}</span></p>
+  </td>
+  <td width="11%" valign=top style='width:11.92%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>&nbsp;</span></p>
+  </td>
+  <td width="11%" valign=top style='width:11.88%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>&nbsp;</span></p>
+  </td>
+  <td width="9%" valign=top style='width:9.68%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:33.25pt'>
+  <td width="21%" nowrap valign=top style='width:21.94%;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>Ks</span></p>
+  </td>
+  <td width="44%" valign=top style='width:44.58%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>Kaltura's session id, used to verification against
+  kaltura's services</span></p>
+  </td>
+  <td width="11%" valign=top style='width:11.92%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>String</span></p>
+  </td>
+  <td width="11%" valign=top style='width:11.88%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>-</span></p>
+  </td>
+  <td width="9%" valign=top style='width:9.68%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>-</span></p>
+  </td>
+ </tr>
+ <tr style='height:33.25pt'>
+  <td width="21%" nowrap valign=top style='width:21.94%;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>uid</span></p>
+  </td>
+  <td width="44%" valign=top style='width:44.58%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>The user id on kaltura network</span></p>
+  </td>
+  <td width="11%" valign=top style='width:11.92%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>String</span></p>
+  </td>
+  <td width="11%" valign=top style='width:11.88%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>-</span></p>
+  </td>
+  <td width="9%" valign=top style='width:9.68%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>-</span></p>
+  </td>
+ </tr>
+ <tr style='height:33.25pt'>
+  <td width="21%" nowrap valign=top style='width:21.94%;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>partnerId</span></p>
+  </td>
+  <td width="44%" valign=top style='width:44.58%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>The partner id on kaltura network</span></p>
+  </td>
+  <td width="11%" valign=top style='width:11.92%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>String</span></p>
+  </td>
+  <td width="11%" valign=top style='width:11.88%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>-</span></p>
+  </td>
+  <td width="9%" valign=top style='width:9.68%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>-</span></p>
+  </td>
+ </tr>
+ <tr style='height:33.25pt'>
+  <td width="21%" nowrap valign=top style='width:21.94%;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>subPId</span></p>
+  </td>
+  <td width="44%" valign=top style='width:44.58%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>The sub-partner id on kaltura network.</span></p>
+  </td>
+  <td width="11%" valign=top style='width:11.92%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>String</span></p>
+  </td>
+  <td width="11%" valign=top style='width:11.88%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>-</span></p>
+  </td>
+  <td width="9%" valign=top style='width:9.68%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>-</span></p>
+  </td>
+ </tr>
+ <tr style='height:33.25pt'>
+  <td width="21%" nowrap valign=top style='width:21.94%;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>host</span></p>
+  </td>
+  <td width="44%" valign=top style='width:44.58%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>[optional] a url, used to point the kcw to kaltura
+  services</span></p>
+  </td>
+  <td width="11%" valign=top style='width:11.92%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>String</span></p>
+  </td>
+  <td width="11%" valign=top style='width:11.88%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>-</span></p>
+  </td>
+  <td width="9%" valign=top style='width:9.68%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>http://www.kaltura.com</span></p>
+  </td>
+ </tr>
+ <tr style='height:33.25pt'>
+  <td width="21%" nowrap valign=top style='width:21.94%;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>uiConfId</span></p>
+  </td>
+  <td width="44%" valign=top style='width:44.58%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>The configuration id.</span></p>
+  </td>
+  <td width="11%" valign=top style='width:11.92%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>String</span></p>
+  </td>
+  <td width="11%" valign=top style='width:11.88%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>-</span></p>
+  </td>
+  <td width="9%" valign=top style='width:9.68%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>-</span></p>
+  </td>
+ </tr>
+ <tr style='height:33.25pt'>
+  <td width="21%" nowrap valign=top style='width:21.94%;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>conversionProfile</span></p>
+  </td>
+  <td width="44%" valign=top style='width:44.58%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>A set id that determines different parameters for
+  the conversion quality </span></p>
+  </td>
+  <td width="11%" valign=top style='width:11.92%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>String</span></p>
+  </td>
+  <td width="11%" valign=top style='width:11.88%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>Yes</span></p>
+  </td>
+  <td width="9%" valign=top style='width:9.68%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>-</span></p>
+  </td>
+ </tr>
+ <tr style='height:33.25pt'>
+  <td width="21%" nowrap valign=top style='width:21.94%;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>maxUploads</span></p>
+  </td>
+  <td width="44%" valign=top style='width:44.58%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>Maximum number of files to upload. Any file that
+  beyond this number will cause validation error.</span></p>
+  </td>
+  <td width="11%" valign=top style='width:11.92%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>uint</span></p>
+  </td>
+  <td width="11%" valign=top style='width:11.88%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>Yes</span></p>
+  </td>
+  <td width="9%" valign=top style='width:9.68%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>-</span></p>
+  </td>
+ </tr>
+ <tr style='height:33.25pt'>
+  <td width="21%" nowrap valign=top style='width:21.94%;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>maxFileSize</span></p>
+  </td>
+  <td width="44%" valign=top style='width:44.58%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>The maximum allowed size per single file.</span></p>
+  </td>
+  <td width="11%" valign=top style='width:11.92%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>Number</span></p>
+  </td>
+  <td width="11%" valign=top style='width:11.88%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>Yes</span></p>
+  </td>
+  <td width="9%" valign=top style='width:9.68%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>-</span></p>
+  </td>
+ </tr>
+ <tr style='height:33.25pt'>
+  <td width="21%" nowrap valign=top style='width:21.94%;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>maxTotalSize</span></p>
+  </td>
+  <td width="44%" valign=top style='width:44.58%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>The maximum total size allowed for all selected
+  files together</span></p>
+  </td>
+  <td width="11%" valign=top style='width:11.92%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>Number</span></p>
+  </td>
+  <td width="11%" valign=top style='width:11.88%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>Yes</span></p>
+  </td>
+  <td width="9%" valign=top style='width:9.68%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>-</span></p>
+  </td>
+ </tr>
+ <tr style='height:33.25pt'>
+  <td width="21%" nowrap valign=top style='width:21.94%;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>entryId</span></p>
+  </td>
+  <td width="44%" valign=top style='width:44.58%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>Currently the kshow id to which the imported media
+  is added, in the future could be other  types of entries</span></p>
+  </td>
+  <td width="11%" valign=top style='width:11.92%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>String</span></p>
+  </td>
+  <td width="11%" valign=top style='width:11.88%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>        No</span></p>
+  </td>
+  <td width="9%" valign=top style='width:9.68%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>-1</span></p>
+  </td>
+ </tr>
+ <tr style='height:33.25pt'>
+  <td width="21%" nowrap valign=top style='width:21.94%;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>partnerData</span></p>
+  </td>
+  <td width="44%" valign=top style='width:44.58%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>Atatched to every entry that is added on the
+  addentry HTTP request</span></p>
+  </td>
+  <td width="11%" valign=top style='width:11.92%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>String</span></p>
+  </td>
+  <td width="11%" valign=top style='width:11.88%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>No</span></p>
+  </td>
+  <td width="9%" valign=top style='width:9.68%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>-</span></p>
+  </td>
+ </tr>
+ <tr style='height:33.25pt'>
+  <td width="21%" nowrap valign=top style='width:21.94%;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:left;line-height:normal;text-autospace:none;direction:ltr;
+  unicode-bidi:embed'><span style='font-size:10.0pt;font-family:Consolas'>permission                  </span></p>
+  </td>
+  <td width="44%" valign=top style='width:44.58%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal dir=LTR style='text-align:left;direction:ltr;unicode-bidi:
+  embed'><span style='font-size:10.0pt;line-height:115%'>An enumeration that
+  determines who can see the entry, the possible values are:</span></p>
+  <p class=MsoNormal dir=LTR style='text-align:left;direction:ltr;unicode-bidi:
+  embed'><span style='font-size:10.0pt;line-height:115%'>1-public</span></p>
+  <p class=MsoNormal dir=LTR style='text-align:left;direction:ltr;unicode-bidi:
+  embed'><span style='font-size:10.0pt;line-height:115%'>2-private</span></p>
+  <p class=MsoNormal dir=LTR style='text-align:left;direction:ltr;unicode-bidi:
+  embed'><span style='font-size:10.0pt;line-height:115%'>3-group</span></p>
+  <p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>4-friends</span></p>
+  </td>
+  <td width="11%" valign=top style='width:11.92%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>String</span></p>
+  </td>
+  <td width="11%" valign=top style='width:11.88%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>No</span></p>
+  </td>
+  <td width="9%" valign=top style='width:9.68%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>-</span></p>
+  </td>
+ </tr>
+ <tr style='height:33.25pt'>
+  <td width="21%" nowrap valign=top style='width:21.94%;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:left;line-height:normal;text-autospace:none;direction:ltr;
+  unicode-bidi:embed'><span style='font-size:10.0pt;font-family:Consolas'>groupId</span></p>
+  </td>
+  <td width="44%" valign=top style='width:44.58%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal dir=LTR style='text-align:left;direction:ltr;unicode-bidi:
+  embed'><span style='font-size:10.0pt;line-height:115%'>Useful for cases in
+  which the entry belongs to some kind of collection. In a social network this
+  can be a group of people. This parameter is passed on the addentry http
+  request.</span></p>
+  </td>
+  <td width="11%" valign=top style='width:11.92%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>String</span></p>
+  </td>
+  <td width="11%" valign=top style='width:11.88%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>No</span></p>
+  </td>
+  <td width="9%" valign=top style='width:9.68%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>-</span></p>
+  </td>
+ </tr>
+ <tr style='height:33.25pt'>
+  <td width="21%" nowrap valign=top style='width:21.94%;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:left;line-height:normal;text-autospace:none;direction:ltr;
+  unicode-bidi:embed'><span style='font-size:10.0pt;font-family:Consolas'>screenName</span></p>
+  </td>
+  <td width="44%" valign=top style='width:44.58%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>Screen name of anonymous user</span></p>
+  </td>
+  <td width="11%" valign=top style='width:11.92%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>String</span></p>
+  </td>
+  <td width="11%" valign=top style='width:11.88%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>No</span></p>
+  </td>
+  <td width="9%" valign=top style='width:9.68%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>-</span></p>
+  </td>
+ </tr>
+ <tr style='height:33.25pt'>
+  <td width="21%" nowrap valign=top style='width:21.94%;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:left;line-height:normal;text-autospace:none;direction:ltr;
+  unicode-bidi:embed'><span style='font-size:10.0pt;font-family:Consolas'>siteUrl</span></p>
+  </td>
+  <td width="44%" valign=top style='width:44.58%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>Anonymous' user site URL</span></p>
+  </td>
+  <td width="11%" valign=top style='width:11.92%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>String</span></p>
+  </td>
+  <td width="11%" valign=top style='width:11.88%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>No</span></p>
+  </td>
+  <td width="9%" valign=top style='width:9.68%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.25pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>-</span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoListParagraphCxSpFirst dir=LTR style='margin-top:0cm;margin-right:
+0cm;margin-bottom:10.0pt;margin-left:18.0pt;text-align:left;direction:ltr;
+unicode-bidi:embed'><b><span style='font-size:16.0pt;line-height:115%'>&nbsp;</span></b></p>
+
+<p class=MsoListParagraphCxSpMiddle dir=LTR style='margin-top:0cm;margin-right:
+0cm;margin-bottom:10.0pt;margin-left:18.0pt;text-align:left;direction:ltr;
+unicode-bidi:embed'><b><span style='font-size:16.0pt;line-height:115%'>&nbsp;</span></b></p>
+
+<p class=MsoListParagraphCxSpMiddle dir=LTR style='margin-top:0cm;margin-right:
+0cm;margin-bottom:10.0pt;margin-left:18.0pt;text-align:left;direction:ltr;
+unicode-bidi:embed'><b><span style='font-size:16.0pt;line-height:115%'>&nbsp;</span></b></p>
+
+<p class=MsoListParagraphCxSpMiddle dir=LTR style='margin-top:0cm;margin-right:
+0cm;margin-bottom:10.0pt;margin-left:18.0pt;text-align:left;direction:ltr;
+unicode-bidi:embed'><b><span style='font-size:16.0pt;line-height:115%'>&nbsp;</span></b></p>
+
+<p class=MsoListParagraphCxSpMiddle dir=LTR style='margin-top:0cm;margin-right:
+0cm;margin-bottom:10.0pt;margin-left:18.0pt;text-align:left;direction:ltr;
+unicode-bidi:embed'><b><span style='font-size:16.0pt;line-height:115%'>&nbsp;</span></b></p>
+
+<p class=MsoListParagraphCxSpMiddle dir=LTR style='margin-top:0cm;margin-right:
+0cm;margin-bottom:10.0pt;margin-left:18.0pt;text-align:left;direction:ltr;
+unicode-bidi:embed'><b><span style='font-size:16.0pt;line-height:115%'>&nbsp;</span></b></p>
+
+<p class=MsoListParagraphCxSpMiddle dir=LTR style='margin-top:0cm;margin-right:
+0cm;margin-bottom:10.0pt;margin-left:18.0pt;text-align:left;direction:ltr;
+unicode-bidi:embed'><b><span style='font-size:16.0pt;line-height:115%'>&nbsp;</span></b></p>
+
+<p class=MsoListParagraphCxSpMiddle dir=LTR style='margin-top:0cm;margin-right:
+0cm;margin-bottom:10.0pt;margin-left:18.0pt;text-align:left;direction:ltr;
+unicode-bidi:embed'><b><span style='font-size:16.0pt;line-height:115%'>&nbsp;</span></b></p>
+
+<p class=MsoListParagraphCxSpMiddle dir=LTR style='margin-top:0cm;margin-right:
+0cm;margin-bottom:10.0pt;margin-left:18.0pt;text-align:left;direction:ltr;
+unicode-bidi:embed'><b><span style='font-size:16.0pt;line-height:115%'>&nbsp;</span></b></p>
+
+<p class=MsoListParagraphCxSpMiddle dir=LTR style='margin-top:0cm;margin-right:
+0cm;margin-bottom:10.0pt;margin-left:18.0pt;text-align:left;direction:ltr;
+unicode-bidi:embed'><b><span style='font-size:16.0pt;line-height:115%'>&nbsp;</span></b></p>
+
+<p class=MsoListParagraphCxSpMiddle dir=LTR style='margin-top:0cm;margin-right:
+0cm;margin-bottom:10.0pt;margin-left:18.0pt;text-align:left;direction:ltr;
+unicode-bidi:embed'><b><span style='font-size:16.0pt;line-height:115%'>&nbsp;</span></b></p>
+
+<p class=MsoListParagraphCxSpMiddle dir=LTR style='margin-top:0cm;margin-right:
+0cm;margin-bottom:10.0pt;margin-left:18.0pt;text-align:left;direction:ltr;
+unicode-bidi:embed'><b><span style='font-size:16.0pt;line-height:115%'>&nbsp;</span></b></p>
+
+<p class=MsoListParagraphCxSpMiddle dir=LTR style='margin-top:0cm;margin-right:
+0cm;margin-bottom:10.0pt;margin-left:18.0pt;text-align:left;text-indent:-18.0pt;
+direction:ltr;unicode-bidi:embed'><b><span style='font-size:16.0pt;line-height:
+115%'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></b><span
+dir=LTR></span><b><span style='font-size:16.0pt;line-height:115%'>UIConf only
+parameters</span></b></p>
+
+<p class=MsoListParagraphCxSpMiddle dir=LTR style='margin-top:0cm;margin-right:
+0cm;margin-bottom:10.0pt;margin-left:54.0pt;text-align:left;text-indent:-18.0pt;
+direction:ltr;unicode-bidi:embed'><span style='font-size:12.0pt;line-height:
+115%;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span dir=LTR></span><span style='font-size:12.0pt;line-height:
+115%'>File filters – a list of file filters to display when in the file
+dialogue box.</span></p>
+
+<p class=MsoListParagraphCxSpLast dir=LTR style='margin-top:0cm;margin-right:
+0cm;margin-bottom:10.0pt;margin-left:54.0pt;text-align:left;direction:ltr;
+unicode-bidi:embed'><span style='font-size:12.0pt;line-height:115%'>For
+example:</span></p>
+
+<p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:left;line-height:normal;text-autospace:none;direction:ltr;
+unicode-bidi:embed'><span style='font-size:12.0pt'>&lt;fileFilters
+default=&quot;image&quot;&gt;</span></p>
+
+<p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:left;line-height:normal;text-autospace:none;direction:ltr;
+unicode-bidi:embed'><span style='font-size:12.0pt'>            &lt;fileFilter
+id=&quot;image&quot;</span></p>
+
+<p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:left;line-height:normal;text-autospace:none;direction:ltr;
+unicode-bidi:embed'><span style='font-size:12.0pt'>                        description=&quot;images&quot;</span></p>
+
+<p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:left;line-height:normal;text-autospace:none;direction:ltr;
+unicode-bidi:embed'><span style='font-size:12.0pt'>                        extensions=&quot;*.jpg;*.jpeg;*.bmp;*.png;*.gif;*.tif;*.tiff&quot;</span></p>
+
+<p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:left;line-height:normal;text-autospace:none;direction:ltr;
+unicode-bidi:embed'><span style='font-size:12.0pt'>                        entryType=&quot;1&quot;</span></p>
+
+<p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:left;line-height:normal;text-autospace:none;direction:ltr;
+unicode-bidi:embed'><span style='font-size:12.0pt'>                        mediaType=&quot;2&quot;
+/&gt;</span></p>
+
+<p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:left;line-height:normal;text-autospace:none;direction:ltr;
+unicode-bidi:embed'><span lang=HE dir=RTL style='font-size:12.0pt;font-family:
+"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:left;line-height:normal;text-autospace:none;direction:ltr;
+unicode-bidi:embed'><span style='font-size:12.0pt'>            &lt;fileFilter
+id=&quot;video&quot;</span></p>
+
+<p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:left;line-height:normal;text-autospace:none;direction:ltr;
+unicode-bidi:embed'><span style='font-size:12.0pt'>                        description=&quot;videos&quot;</span></p>
+
+<p class=MsoNormal dir=LTR style='margin-top:0cm;margin-right:0cm;margin-bottom:
+0cm;margin-left:72.0pt;margin-bottom:.0001pt;text-align:left;line-height:normal;
+text-autospace:none;direction:ltr;unicode-bidi:embed'><span style='font-size:
+12.0pt'>extensions=&quot;*.flv;*.asf;*.qt;*.mov;*.mpg;*.mpeg;*.avi;*.wmv;*.mp4;*.m4v;*.3gp&quot;
+</span></p>
+
+<p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:left;line-height:normal;text-autospace:none;direction:ltr;
+unicode-bidi:embed'><span style='font-size:12.0pt'>                        type=&quot;1&quot;</span></p>
+
+<p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:left;line-height:normal;text-autospace:none;direction:ltr;
+unicode-bidi:embed'><span style='font-size:12.0pt'>                        entryType=&quot;1&quot;</span></p>
+
+<p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:left;line-height:normal;text-autospace:none;direction:ltr;
+unicode-bidi:embed'><span style='font-size:12.0pt'>                        mediaType=&quot;1&quot;
+/&gt;</span></p>
+
+<p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:left;line-height:normal;text-autospace:none;direction:ltr;
+unicode-bidi:embed'><span lang=HE dir=RTL style='font-size:12.0pt;font-family:
+"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal dir=LTR style='margin-top:0cm;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt;text-align:left;line-height:normal;
+text-autospace:none;direction:ltr;unicode-bidi:embed'><span dir=LTR></span><span
+style='font-size:12.0pt'><span dir=LTR></span>&lt;fileFilter
+id=&quot;audio&quot; description=&quot;audio&quot;                     </span></p>
+
+<p class=MsoNormal dir=LTR style='margin-top:0cm;margin-right:0cm;margin-bottom:
+0cm;margin-left:72.0pt;margin-bottom:.0001pt;text-align:left;line-height:normal;
+text-autospace:none;direction:ltr;unicode-bidi:embed'><span style='font-size:
+12.0pt'>extensions=&quot;*.flv;*.asf;*.wmv;*.qt;*.mov;*.mpg;*.avi;*.mp3;*.wav;*.mp4;*.wma;*.3gp&quot;</span></p>
+
+<p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:left;line-height:normal;text-autospace:none;direction:ltr;
+unicode-bidi:embed'><span style='font-size:12.0pt'>                        entryType=&quot;1&quot;</span></p>
+
+<p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:left;line-height:normal;text-autospace:none;direction:ltr;
+unicode-bidi:embed'><span style='font-size:12.0pt'>                        mediaType=&quot;5&quot;
+/&gt;</span></p>
+
+<p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:left;line-height:normal;text-autospace:none;direction:ltr;
+unicode-bidi:embed'><span lang=HE dir=RTL style='font-size:12.0pt;font-family:
+"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:left;line-height:normal;text-autospace:none;direction:ltr;
+unicode-bidi:embed'><span style='font-size:12.0pt'>            &lt;fileFilter
+id=&quot;media&quot;</span></p>
+
+<p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:left;line-height:normal;text-autospace:none;direction:ltr;
+unicode-bidi:embed'><span style='font-size:12.0pt'>                        description=&quot;images/videos/audio&quot;                           </span></p>
+
+<p class=MsoNormal dir=LTR style='margin-top:0cm;margin-right:0cm;margin-bottom:
+0cm;margin-left:72.0pt;margin-bottom:.0001pt;text-align:left;line-height:normal;
+text-autospace:none;direction:ltr;unicode-bidi:embed'><span style='font-size:
+12.0pt'>extensions=&quot;*.qt;*.mov;*.mpg;*.avi;*.mp3;*.wav;*.mp4;*.wma;*.flv; *.asf;*.qt;*.mov;*.mpeg;*.avi;*.wmv;*.m4v;*.3gp;*.jpg;*.jpeg;*.bmp;*.png;*.gif;*.tif;*.tiff&quot;</span></p>
+
+<p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:left;line-height:normal;text-autospace:none;direction:ltr;
+unicode-bidi:embed'><span style='font-size:12.0pt'>                        entryType=&quot;1&quot;</span></p>
+
+<p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:left;line-height:normal;text-autospace:none;direction:ltr;
+unicode-bidi:embed'><span style='font-size:12.0pt'>                        mediaType=&quot;-1&quot;
+/&gt;</span></p>
+
+<p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:left;line-height:normal;text-autospace:none;direction:ltr;
+unicode-bidi:embed'><span lang=HE dir=RTL style='font-size:12.0pt;font-family:
+"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:left;line-height:normal;text-autospace:none;direction:ltr;
+unicode-bidi:embed'><span style='font-size:12.0pt'>            &lt;fileFilter
+id=&quot;documents&quot;</span></p>
+
+<p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:left;line-height:normal;text-autospace:none;direction:ltr;
+unicode-bidi:embed'><span style='font-size:12.0pt'>                        description=&quot;documents&quot;</span></p>
+
+<p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:left;line-height:normal;text-autospace:none;direction:ltr;
+unicode-bidi:embed'><span style='font-size:12.0pt'>                        extensions=&quot;*.*&quot;</span></p>
+
+<p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:left;line-height:normal;text-autospace:none;direction:ltr;
+unicode-bidi:embed'><span style='font-size:12.0pt'>                        entryType=&quot;10&quot;</span></p>
+
+<p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:left;line-height:normal;text-autospace:none;direction:ltr;
+unicode-bidi:embed'><span style='font-size:12.0pt'>                        mediaType=&quot;-1&quot;
+/&gt;</span></p>
+
+<p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:left;line-height:normal;text-autospace:none;direction:ltr;
+unicode-bidi:embed'><span lang=HE dir=RTL style='font-size:12.0pt;font-family:
+"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:left;line-height:normal;text-autospace:none;direction:ltr;
+unicode-bidi:embed'><span style='font-size:12.0pt'>            &lt;fileFilter
+id=&quot;any&quot;</span></p>
+
+<p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:left;line-height:normal;text-autospace:none;direction:ltr;
+unicode-bidi:embed'><span style='font-size:12.0pt'>                        description=&quot;documents/images/videos/audio&quot;</span></p>
+
+<p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:left;line-height:normal;text-autospace:none;direction:ltr;
+unicode-bidi:embed'><span style='font-size:12.0pt'>                        extensions=&quot;*.*&quot;</span></p>
+
+<p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:left;line-height:normal;text-autospace:none;direction:ltr;
+unicode-bidi:embed'><span style='font-size:12.0pt'>                        entryType=&quot;-1&quot;</span></p>
+
+<p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:left;line-height:normal;text-autospace:none;direction:ltr;
+unicode-bidi:embed'><span style='font-size:12.0pt'>                        mediaType=&quot;-1&quot;
+/&gt;</span></p>
+
+<p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:left;line-height:normal;text-autospace:none;direction:ltr;
+unicode-bidi:embed'><span style='font-size:12.0pt'>&lt;/fileFilters&gt;</span></p>
+
+<p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:left;line-height:normal;text-autospace:none;direction:ltr;
+unicode-bidi:embed'><b><span style='font-size:16.0pt'>&nbsp;</span></b></p>
+
+<p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:left;line-height:normal;text-autospace:none;direction:ltr;
+unicode-bidi:embed'><b><span style='font-size:16.0pt'>&nbsp;</span></b></p>
+
+<p class=MsoNormal dir=LTR style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:left;line-height:normal;text-autospace:none;direction:ltr;
+unicode-bidi:embed'><b><span style='font-size:16.0pt'>Public methods</span></b></p>
+
+<div align=left dir=ltr>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=631
+ style='width:473.2pt;border-collapse:collapse;border:none'>
+ <tr style='height:12.85pt'>
+  <td width=272 valign=top style='width:203.85pt;border:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.85pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><b><span
+  style='font-size:10.0pt'>Method signature</span></b></p>
+  </td>
+  <td width=359 valign=top style='width:269.35pt;border:solid black 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:12.85pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><b><span
+  style='font-size:10.0pt'>Description</span></b></p>
+  </td>
+ </tr>
+ <tr style='height:12.05pt'>
+  <td width=272 valign=top style='width:203.85pt;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:12.05pt'>
+  <p class=MsoListParagraphCxSpFirst dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>addTags(tags:Array, startIndex:int,
+  endIndex:int):void</span></p>
+  </td>
+  <td width=359 valign=top style='width:269.35pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.05pt'>
+  <p class=MsoListParagraphCxSpMiddle dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>Add tags to a range of FileVO objects.</span></p>
+  <p class=MsoListParagraphCxSpMiddle dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>tags – an Array that contains tags in each one if
+  its items</span></p>
+  <p class=MsoListParagraphCxSpMiddle dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>startIndex &amp; endIndex creates a range of FileVO
+  to which the data should be added. To add tags to the first &amp; second
+  FileVO object tags, you call:</span></p>
+  <p class=MsoListParagraphCxSpMiddle dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>addTags(['doomed!', 'all doomed!'], 0, 1 )</span></p>
+  <p class=MsoListParagraphCxSpMiddle dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>The new tags will be appended to any existing tags</span></p>
+  <p class=MsoListParagraphCxSpLast dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.85pt'>
+  <td width=272 valign=top style='width:203.85pt;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:12.85pt'>
+  <p class=MsoListParagraphCxSpFirst dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>setTags(tags:Array, startIndex:int,
+  endIndex:int):void</span></p>
+  </td>
+  <td width=359 valign=top style='width:269.35pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.85pt'>
+  <p class=MsoListParagraphCxSpMiddle dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>Set tags to a range of FileVO objects.</span></p>
+  <p class=MsoListParagraphCxSpMiddle dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>tags – an Array that contains tags in each one if
+  its items</span></p>
+  <p class=MsoListParagraphCxSpMiddle dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>startIndex &amp; endIndex creates a range of FileVO
+  to which the data should be set. To set a single tag to the first &amp;
+  second FileVO object tags, you call:</span></p>
+  <p class=MsoListParagraphCxSpMiddle dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>setTags(['oh crap, dinosaurs!'], 0, 1 )</span></p>
+  <p class=MsoListParagraphCxSpMiddle dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>&nbsp;</span></p>
+  <p class=MsoListParagraphCxSpMiddle dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>The new tags will replace any existing tags</span></p>
+  <p class=MsoListParagraphCxSpLast dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.85pt'>
+  <td width=272 valign=top style='width:203.85pt;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:12.85pt'>
+  <p class=MsoListParagraphCxSpFirst dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>setTitle(title:String, startIndex:int,
+  endIndex:int):void</span></p>
+  </td>
+  <td width=359 valign=top style='width:269.35pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.85pt'>
+  <p class=MsoListParagraphCxSpMiddle dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>Set a titleto a range of FileVO objects.</span></p>
+  <p class=MsoListParagraphCxSpMiddle dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>title – A string that represents the media title</span></p>
+  <p class=MsoListParagraphCxSpMiddle dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>startIndex &amp; endIndex creates a range of FileVO
+  to which the data should be set. To set a title to the first FileVO object,
+  you call:</span></p>
+  <p class=MsoListParagraphCxSpMiddle dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>setTitle(['I love fat books!'], 0, 0 )</span></p>
+  <p class=MsoListParagraphCxSpLast dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.85pt'>
+  <td width=272 valign=top style='width:203.85pt;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:12.85pt'>
+  <p class=MsoListParagraphCxSpFirst dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>removeFiles(startIndex:int, endIndex:int):void</span></p>
+  </td>
+  <td width=359 valign=top style='width:269.35pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.85pt'>
+  <p class=MsoListParagraphCxSpLast dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>Removes a range of file indicated by the startIndex
+  &amp; the endIndex</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.85pt'>
+  <td width=272 valign=top style='width:203.85pt;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:12.85pt'>
+  <p class=MsoListParagraphCxSpFirst dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>upload():void</span></p>
+  </td>
+  <td width=359 valign=top style='width:269.35pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.85pt'>
+  <p class=MsoListParagraphCxSpMiddle dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>Starts the upload operation if no limitation errors
+  exists.</span></p>
+  <p class=MsoListParagraphCxSpLast dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>If the upload process was previously stopped, it
+  will start form the file whose upload was cancelled</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.85pt'>
+  <td width=272 valign=top style='width:203.85pt;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:12.85pt'>
+  <p class=MsoListParagraphCxSpFirst dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>setMediaType(mediaType:String):void</span></p>
+  </td>
+  <td width=359 valign=top style='width:269.35pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.85pt'>
+  <p class=MsoListParagraphCxSpMiddle dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>Set the media type to show in the file dialogue.</span></p>
+  <p class=MsoListParagraphCxSpMiddle dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>The media types are defined in the UI conf file.</span></p>
+  <p class=MsoListParagraphCxSpLast dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>The common types are: video, audio, image.</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.85pt'>
+  <td width=272 valign=top style='width:203.85pt;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:12.85pt'>
+  <p class=MsoListParagraphCxSpFirst dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>addEntries():void</span></p>
+  </td>
+  <td width=359 valign=top style='width:269.35pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.85pt'>
+  <p class=MsoListParagraphCxSpLast dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>Executes the addentry http call to add any uploaded
+  file</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.85pt'>
+  <td width=272 valign=top style='width:203.85pt;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:12.85pt'>
+  <p class=MsoListParagraphCxSpFirst dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>getFiles():Array</span></p>
+  </td>
+  <td width=359 valign=top style='width:269.35pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.85pt'>
+  <p class=MsoListParagraphCxSpLast dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>Returns an Array object that contains all FileVO
+  objects</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.85pt'>
+  <td width=272 valign=top style='width:203.85pt;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:12.85pt'>
+  <p class=MsoListParagraphCxSpFirst dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>getTotalSize():uint</span></p>
+  </td>
+  <td width=359 valign=top style='width:269.35pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.85pt'>
+  <p class=MsoListParagraphCxSpLast dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>Returns the total size of all selected files</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.85pt'>
+  <td width=272 valign=top style='width:203.85pt;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:12.85pt'>
+  <p class=MsoListParagraphCxSpFirst dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>stopUploads():void</span></p>
+  </td>
+  <td width=359 valign=top style='width:269.35pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.85pt'>
+  <p class=MsoListParagraphCxSpLast dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>Stops any upload that is currently being performed.</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.85pt'>
+  <td width=272 valign=top style='width:203.85pt;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:12.85pt'>
+  <p class=MsoListParagraphCxSpFirst dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>getError():String</span></p>
+  </td>
+  <td width=359 valign=top style='width:269.35pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.85pt'>
+  <p class=MsoListParagraphCxSpMiddle dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>Returns the current error if any exists, otherwise,
+  returns null.</span></p>
+  <p class=MsoListParagraphCxSpMiddle dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>Possible values:</span></p>
+  <p class=MsoListParagraphCxSpMiddle dir=LTR style='margin-top:0cm;margin-right:
+  0cm;margin-bottom:0cm;margin-left:36.0pt;margin-bottom:.0001pt;text-align:
+  left;text-indent:-18.0pt;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span dir=LTR></span><span style='font-size:10.0pt'>fileSizeExceeds</span></p>
+  <p class=MsoListParagraphCxSpMiddle dir=LTR style='margin-top:0cm;margin-right:
+  0cm;margin-bottom:0cm;margin-left:36.0pt;margin-bottom:.0001pt;text-align:
+  left;text-indent:-18.0pt;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span dir=LTR></span><span style='font-size:10.0pt'>totalSizeExceeds</span></p>
+  <p class=MsoListParagraphCxSpMiddle dir=LTR style='margin-top:0cm;margin-right:
+  0cm;margin-bottom:0cm;margin-left:36.0pt;margin-bottom:.0001pt;text-align:
+  left;text-indent:-18.0pt;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span dir=LTR></span><span style='font-size:10.0pt'>numFilesExceeds</span></p>
+  <p class=MsoListParagraphCxSpLast dir=LTR style='margin-top:0cm;margin-right:
+  0cm;margin-bottom:0cm;margin-left:36.0pt;margin-bottom:.0001pt;text-align:
+  left;text-indent:-18.0pt;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span dir=LTR></span><span style='font-size:10.0pt'>uploadError</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.85pt'>
+  <td width=272 valign=top style='width:203.85pt;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:12.85pt'>
+  <p class=MsoListParagraphCxSpFirst dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>getExceedingFilesIndices():Array</span></p>
+  </td>
+  <td width=359 valign=top style='width:269.35pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.85pt'>
+  <p class=MsoListParagraphCxSpLast dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>Returns an Array, whose values are indices of all
+  files that exceeds the </span><span style='font-size:10.0pt'>maxFileSize</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.85pt'>
+  <td width=272 valign=top style='width:203.85pt;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:12.85pt'>
+  <p class=MsoListParagraphCxSpFirst dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>getUploadedErrorIndices():Array</span></p>
+  </td>
+  <td width=359 valign=top style='width:269.35pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.85pt'>
+  <p class=MsoListParagraphCxSpLast dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>Returns an Array, whose values are indices of all
+  files whose upload failed</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.85pt'>
+  <td width=272 valign=top style='width:203.85pt;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:12.85pt'>
+  <p class=MsoListParagraphCxSpFirst dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>setMaxUploads(value:uint):void</span></p>
+  </td>
+  <td width=359 valign=top style='width:269.35pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.85pt'>
+  <p class=MsoListParagraphCxSpLast dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>Sets the maximum number of uploads</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.85pt'>
+  <td width=272 valign=top style='width:203.85pt;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:12.85pt'>
+  <p class=MsoListParagraphCxSpFirst dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>setPartnerData(value:String):void</span></p>
+  </td>
+  <td width=359 valign=top style='width:269.35pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.85pt'>
+  <p class=MsoListParagraphCxSpLast dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>Sets (overwrites) the partner data that's sent on
+  the addentry HTTP request</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.85pt'>
+  <td width=272 valign=top style='width:203.85pt;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:12.85pt'>
+  <p class=MsoListParagraphCxSpFirst dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>browse():void</span></p>
+  </td>
+  <td width=359 valign=top style='width:269.35pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.85pt'>
+  <p class=MsoListParagraphCxSpMiddle dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><b><span
+  style='font-size:10.0pt'>[Deprecated]</span></b><span style='font-size:10.0pt'>
+  Show the file dialogue box.</span></p>
+  <p class=MsoListParagraphCxSpMiddle dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>It's strongly advised not to use this function but
+  rather place the swf in a transparent mode above the HTML guid element that
+  the user sees.</span></p>
+  <p class=MsoListParagraphCxSpLast dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>When the maxUploads is set to 1 file, the file
+  dialogue box will only allow single file selection.</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.85pt'>
+  <td width=272 valign=top style='width:203.85pt;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:12.85pt'>
+  <p class=MsoListParagraphCxSpFirst dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>setGroupId(value:String):void</span></p>
+  </td>
+  <td width=359 valign=top style='width:269.35pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.85pt'>
+  <p class=MsoListParagraphCxSpLast dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>Sets the group id (overwrites any existing value)</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.85pt'>
+  <td width=272 valign=top style='width:203.85pt;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:12.85pt'>
+  <p class=MsoListParagraphCxSpFirst dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>setScreenName(value:String):void</span></p>
+  </td>
+  <td width=359 valign=top style='width:269.35pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.85pt'>
+  <p class=MsoListParagraphCxSpLast dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>Sets the screen name (overwrites any existing value)</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.85pt'>
+  <td width=272 valign=top style='width:203.85pt;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:12.85pt'>
+  <p class=MsoListParagraphCxSpFirst dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>setSiteUrl(value:String):void</span></p>
+  </td>
+  <td width=359 valign=top style='width:269.35pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.85pt'>
+  <p class=MsoListParagraphCxSpLast dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>Sets the site URL (overwrites any existing value)</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.85pt'>
+  <td width=272 valign=top style='width:203.85pt;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:12.85pt'>
+  <p class=MsoListParagraphCxSpFirst dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>setPermissions(value:String):void</span></p>
+  </td>
+  <td width=359 valign=top style='width:269.35pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.85pt'>
+  <p class=MsoListParagraphCxSpLast dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>Sets the permission level (overwrites any existing
+  value)</span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal dir=LTR style='text-align:left;direction:ltr;unicode-bidi:
+embed'><b><span style='font-size:16.0pt;line-height:115%'>&nbsp;</span></b></p>
+
+<p class=MsoListParagraph dir=LTR style='margin-top:0cm;margin-right:0cm;
+margin-bottom:10.0pt;margin-left:18.0pt;text-align:left;text-indent:-18.0pt;
+direction:ltr;unicode-bidi:embed'><b><span style='font-size:16.0pt;line-height:
+115%'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></b><span
+dir=LTR></span><b><span style='font-size:16.0pt;line-height:115%'>JS callbacks
+(events)</span></b></p>
+
+<div align=left dir=ltr>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=605
+ style='width:453.65pt;margin-left:-1.7pt;border-collapse:collapse;border:none'>
+ <tr style='height:12.2pt'>
+  <td width=236 rowspan=2 valign=top style='width:176.95pt;border:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.2pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><b><span
+  style='font-size:10.0pt'>JS callback signature</span></b></p>
+  </td>
+  <td width=369 rowspan=2 valign=top style='width:276.7pt;border:solid black 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:12.2pt'>
+  <p class=MsoNormal align=center dir=LTR style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed'><b><span
+  style='font-size:10.0pt'>Meaning</span></b></p>
+  </td>
+  <td style='height:12.2pt;border:none' width=0 height=16></td>
+ </tr>
+ <tr style='height:12.2pt'>
+  <td style='height:12.2pt;border:none' width=0 height=16></td>
+ </tr>
+ <tr>
+  <td width=236 valign=top style='width:176.95pt;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraphCxSpFirst dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>uploadErrorHandler():void</span></p>
+  </td>
+  <td width=369 valign=top style='width:276.7pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraphCxSpLast dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>Called upon any upload error</span></p>
+  </td>
+  <td style='border:none' width=0><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr>
+  <td width=236 valign=top style='width:176.95pt;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraphCxSpFirst dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>addEntryFailedHandler ():void</span></p>
+  </td>
+  <td width=369 valign=top style='width:276.7pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraphCxSpLast dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>Add entry HTTP request returned an error</span></p>
+  </td>
+  <td style='border:none' width=0><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr>
+  <td width=236 valign=top style='width:176.95pt;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraphCxSpFirst dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>uiConfErrorHandler():void</span></p>
+  </td>
+  <td width=369 valign=top style='width:276.7pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraphCxSpLast dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>UI conf was not successfully loaded or XML parsing
+  error</span></p>
+  </td>
+  <td style='border:none' width=0><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr>
+  <td width=236 valign=top style='width:176.95pt;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraphCxSpFirst dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>readyHandler():void</span></p>
+  </td>
+  <td width=369 valign=top style='width:276.7pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraphCxSpLast dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>The flash object is ready to interact with JS</span></p>
+  </td>
+  <td style='border:none' width=0><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr>
+  <td width=236 valign=top style='width:176.95pt;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraphCxSpFirst dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'> selectHandler():void</span></p>
+  </td>
+  <td width=369 valign=top style='width:276.7pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraphCxSpLast dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>User has selected files from the file dialogue</span></p>
+  </td>
+  <td style='border:none' width=0><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr>
+  <td width=236 valign=top style='width:176.95pt;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraphCxSpFirst dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>singleUploadCompleteHandler(params:Array):void </span></p>
+  </td>
+  <td width=369 valign=top style='width:276.7pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraphCxSpMiddle dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>&nbsp;</span></p>
+  <p class=MsoListParagraphCxSpMiddle dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>A file has been successfully uploaded to Kaltura
+  network (but not added as an entry yet)</span></p>
+  <p class=MsoListParagraphCxSpLast dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>Params[0] - the FileVO object that was uploaded</span></p>
+  </td>
+  <td style='border:none' width=0><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr>
+  <td width=236 valign=top style='width:176.95pt;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraphCxSpFirst dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>allUploadsCompleteHandler():void</span></p>
+  </td>
+  <td width=369 valign=top style='width:276.7pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraphCxSpLast dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>A file have been successfully uploaded to Kaltura
+  network (but not added as entries yet)</span></p>
+  </td>
+  <td style='border:none' width=0><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr>
+  <td width=236 valign=top style='width:176.95pt;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraphCxSpFirst dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>entriesAddedHandler(entries:Array):void</span></p>
+  </td>
+  <td width=369 valign=top style='width:276.7pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraphCxSpLast dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>All files were successfully added to Kaltura network
+  as entries</span></p>
+  </td>
+  <td style='border:none' width=0><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr>
+  <td width=236 valign=top style='width:176.95pt;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraphCxSpFirst dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>progressHandler(params:Array):void</span></p>
+  </td>
+  <td width=369 valign=top style='width:276.7pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraphCxSpMiddle dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>File is being uploaded and reports its progress.</span></p>
+  <p class=MsoListParagraphCxSpMiddle dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>params[0] - bytesLoaded:uint, </span></p>
+  <p class=MsoListParagraphCxSpMiddle dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>params[1] - bytesTotal:uint</span></p>
+  <p class=MsoListParagraphCxSpLast dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>params[2] - fileVo:FileVO</span></p>
+  </td>
+  <td style='border:none' width=0><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal dir=LTR style='text-align:left;direction:ltr;unicode-bidi:
+embed'><b><span style='font-size:16.0pt;line-height:115%'>&nbsp;</span></b></p>
+
+<p class=MsoListParagraphCxSpFirst dir=LTR style='margin-top:0cm;margin-right:
+0cm;margin-bottom:10.0pt;margin-left:18.0pt;text-align:left;text-indent:-18.0pt;
+direction:ltr;unicode-bidi:embed'><b><span style='font-size:16.0pt;line-height:
+115%'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></b><span
+dir=LTR></span><b><span style='font-size:16.0pt;line-height:115%'>Errors –
+Exception that may be thrown by the flash player.</span></b></p>
+
+<p class=MsoListParagraphCxSpMiddle dir=LTR style='margin-top:0cm;margin-right:
+0cm;margin-bottom:0cm;margin-left:36.0pt;margin-bottom:.0001pt;text-align:left;
+text-indent:-18.0pt;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+style='font-size:10.0pt;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span dir=LTR></span><span style='font-size:10.0pt'>Limitations
+error – &quot;Cannot upload, limitations exceeded. Please check for
+errors&quot;</span></p>
+
+<p class=MsoListParagraphCxSpMiddle dir=LTR style='margin-top:0cm;margin-right:
+0cm;margin-bottom:0cm;margin-left:36.0pt;margin-bottom:.0001pt;text-align:left;
+line-height:normal;direction:ltr;unicode-bidi:embed'><span style='font-size:
+10.0pt'>Thrown if the upload()  function is invoked while an error *exists.</span></p>
+
+<p class=MsoListParagraphCxSpMiddle dir=LTR style='margin-top:0cm;margin-right:
+0cm;margin-bottom:0cm;margin-left:36.0pt;margin-bottom:.0001pt;text-align:left;
+text-indent:-18.0pt;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+style='font-size:10.0pt;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span dir=LTR></span><span style='font-size:10.0pt'>Upload error
+- &quot;Cannot add entries, some uploads failed. Either re-upload or remove the
+files&quot;</span></p>
+
+<p class=MsoListParagraphCxSpMiddle dir=LTR style='margin-top:0cm;margin-right:
+0cm;margin-bottom:0cm;margin-left:36.0pt;margin-bottom:.0001pt;text-align:left;
+line-height:normal;direction:ltr;unicode-bidi:embed'><span style='font-size:
+10.0pt'>Thrown if the addEntries() function is invoked while an error *exists.</span></p>
+
+<p class=MsoListParagraphCxSpMiddle dir=LTR style='margin-top:0cm;margin-right:
+0cm;margin-bottom:0cm;margin-left:36.0pt;margin-bottom:.0001pt;text-align:left;
+line-height:normal;direction:ltr;unicode-bidi:embed'><span style='font-size:
+10.0pt'>&nbsp;</span></p>
+
+<p class=MsoListParagraphCxSpMiddle dir=LTR style='margin-top:0cm;margin-right:
+0cm;margin-bottom:0cm;margin-left:18.0pt;margin-bottom:.0001pt;text-align:left;
+line-height:normal;direction:ltr;unicode-bidi:embed'><span style='font-size:
+10.0pt'>* The error can be polled by calling getError()</span></p>
+
+<p class=MsoListParagraphCxSpMiddle dir=LTR style='margin-top:0cm;margin-right:
+0cm;margin-bottom:0cm;margin-left:18.0pt;margin-bottom:.0001pt;text-align:left;
+line-height:normal;direction:ltr;unicode-bidi:embed'><span style='font-size:
+10.0pt'>&nbsp;</span></p>
+
+<p class=MsoListParagraphCxSpMiddle dir=LTR style='margin-top:0cm;margin-right:
+0cm;margin-bottom:0cm;margin-left:18.0pt;margin-bottom:.0001pt;text-align:left;
+line-height:normal;direction:ltr;unicode-bidi:embed'><span style='font-size:
+10.0pt'>&nbsp;</span></p>
+
+<p class=MsoListParagraphCxSpMiddle dir=LTR style='margin-top:0cm;margin-right:
+0cm;margin-bottom:0cm;margin-left:18.0pt;margin-bottom:.0001pt;text-align:left;
+line-height:normal;direction:ltr;unicode-bidi:embed'><span style='font-size:
+10.0pt'>&nbsp;</span></p>
+
+<p class=MsoListParagraphCxSpMiddle dir=LTR style='margin-top:0cm;margin-right:
+0cm;margin-bottom:0cm;margin-left:18.0pt;margin-bottom:.0001pt;text-align:left;
+line-height:normal;direction:ltr;unicode-bidi:embed'><span style='font-size:
+10.0pt'>&nbsp;</span></p>
+
+<p class=MsoListParagraphCxSpMiddle dir=LTR style='margin-top:0cm;margin-right:
+0cm;margin-bottom:10.0pt;margin-left:18.0pt;text-align:left;text-indent:-18.0pt;
+direction:ltr;unicode-bidi:embed'><b><span style='font-size:16.0pt;line-height:
+115%'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></b><span
+dir=LTR></span><b><span style='font-size:16.0pt;line-height:115%'>Value Objects
+[DTO]</span></b></p>
+
+<div align=left dir=ltr>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=633
+ style='width:474.9pt;margin-left:-1.7pt;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=113 valign=top style='width:85.1pt;border:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraphCxSpMiddle dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><b><span
+  style='font-size:10.0pt'>Represents</span></b></p>
+  </td>
+  <td width=105 valign=top style='width:78.8pt;border:solid black 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraphCxSpMiddle dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><b><span
+  style='font-size:10.0pt'>Class name</span></b></p>
+  </td>
+  <td width=415 valign=top style='width:311.0pt;border:solid black 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraphCxSpLast dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><b><span
+  style='font-size:10.0pt'>Properties</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=113 valign=top style='width:85.1pt;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraphCxSpFirst dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>File being uploaded</span></p>
+  </td>
+  <td width=105 valign=top style='width:78.8pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraphCxSpMiddle dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>FileVO</span></p>
+  </td>
+  <td width=415 valign=top style='width:311.0pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraphCxSpMiddle dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>bytesLoaded:uint</span></p>
+  <p class=MsoListParagraphCxSpMiddle dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>bytesTotal:uint</span></p>
+  <p class=MsoListParagraphCxSpMiddle dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>title:String</span></p>
+  <p class=MsoListParagraphCxSpMiddle dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>tags:Array</span></p>
+  <p class=MsoListParagraphCxSpMiddle dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>guid:String</span></p>
+  <p class=MsoListParagraphCxSpMiddle dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>extension:String</span></p>
+  <p class=MsoListParagraphCxSpMiddle dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>mediaTypeCode:String</span></p>
+  <p class=MsoListParagraphCxSpMiddle dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>entryType:String</span></p>
+  <p class=MsoListParagraphCxSpMiddle dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>entryId:String</span></p>
+  <p class=MsoListParagraphCxSpMiddle dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>uploadStatus:String</span></p>
+  <p class=MsoListParagraphCxSpLast dir=LTR style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed'><span
+  style='font-size:10.0pt'>&nbsp;</span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoListParagraph dir=LTR style='margin-top:0cm;margin-right:0cm;
+margin-bottom:10.0pt;margin-left:36.0pt;text-align:left;direction:ltr;
+unicode-bidi:embed'><b><span style='font-size:16.0pt;line-height:115%'>&nbsp;</span></b></p>
+
+</div>
+
+</body>
+
+</html>

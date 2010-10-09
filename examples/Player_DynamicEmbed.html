@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title> Dynamic Embed example </title>		     
+	
+	
+	<script type="text/javascript" src="http://html5.kaltura.org/js"></script>
+	<script type="text/javascript">	
+	mw.setConfig( 'EmbedPlayer.OverlayControls', false );
+	mw.ready( function(){
+		$j('#videoContainer').loadingSpinner();
+		mw.load('EmbedPlayer', function(){
+			$j('#videoContainer').embedPlayer({			
+				'poster' : "http://cdn.kaltura.org/apis/html5lib/kplayer-examples/media/bbb480.jpg",
+				'durationHint' : "33",
+				'sources' : [
+					{ 'src' : "http://cdn.kaltura.org/apis/html5lib/kplayer-examples/media/bbb_trailer_360p.webm" },
+					{ 'src' : "http://cdn.kaltura.org/apis/html5lib/kplayer-examples/media/bbb_trailer_iphone270P.m4v" },
+					{ 'src' : "http://cdn.kaltura.org/apis/html5lib/kplayer-examples/media/bbb_trailer_400p.ogv" }
+				]		
+			})
+		});
+	});				
+</script>
+</head>
+
+<body>
+<h3> Dynamic Embed example:</h3>
+<div id="videoContainer" style="width:480px;height:267px;">	
+</div>
+	
+</body>
+</html>
+

@@ -1,0 +1,136 @@
+#nav li ul{
+  z-index:100;
+}
+#content {
+  width:970px;
+  position:relative;
+  overflow:hidden;
+}
+.box270 {
+  width:480px;
+  height:270px;
+  float:left;
+  border:1px solid #DB6E5C;
+  color:#F8FCC1;
+  background:url("http://openvideoalliance.org/i/side_bg.png") repeat scroll 0 0 transparent;
+  position: relative;
+  overflow:hidden;
+}
+.video-highlight img,
+#video-player{
+  position:absolute;
+  opacity:0;
+}
+#video-player{
+  z-index:2;
+}
+.infobox {
+  border:1px solid #F8FCC1;
+}
+.infobox .video-description{
+  position:absolute;
+  overflow:auto;
+  width:480px;
+  height:220px;
+  opacity:0;
+}
+.infobox .video-description p{
+  margin:1em;
+}
+.infobox .toolbar{
+  height:50px;
+  position:absolute;
+  top:207px;
+  margin-top:1em;
+  overflow:hidden;
+  width:100%;
+}
+.infobox .toolbar a{
+  text-decoration:none;
+  color:#DB6E5C;
+  width:238px;
+}
+.infobox .toolbar a {
+  background-color:#F8FCC1;
+  color:#DB6E5C;
+  display:inline-block;
+  font-size:24px;
+  font-weight:bold;
+  height:50px;
+  line-height:50px;
+  text-align:center;
+  text-decoration:none;
+  vertical-align:middle;
+  width:238px;
+}
+.infobox .toolbar .left-button{
+  margin-right:4px;
+}
+#thumbs-viewport{
+  width:964px;
+  height:273px;
+  display:inline-block;
+  overflow:hidden;
+  position:relative;
+}
+#thumbs-container{
+  position:relative;
+  left:0px;
+}
+.thumbs-page{
+  position:absolute;
+  width:964px;
+}
+.thumbs-page.page-1{left:0px;}
+.thumbs-page.page-2{left:964px;}
+#thumbs-container.page-1{left:0px;}
+#thumbs-container.page-2{left:-964px;}
+.thumbnail {
+  display:inline-block;
+  border:1px solid #DB6E5C;
+}
+.thumbnail img{
+  width:239px;
+  height:134px;
+  opacity:.9;
+}
+.thumbnail:hover{
+}
+.thumbnail img:hover{
+  opacity:1;
+  cursor:pointer;
+}
+div.thumbnail.selected{
+  border:1px solid #F8FCC1;
+}
+#video-player,
+.detail-image,
+.video-description{
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  -webkit-transition-duration: 1s;
+  -moz-transition-duration: 1s;
+  -o-transition-duration: 1s;
+}
+#thumbs-container{
+  -webkit-transition-property: left;
+  -moz-transition-property: left;
+  -o-transition-property: left;
+  -webkit-transition-duration: 1.5s;
+  -moz-transition-duration: 1.5s;
+  -o-transition-duration: 1.5s;
+}
+.navbar a{
+  text-decoration:none;
+}
+.navbar a:hover{
+  color:#fff;
+}
+.navbar .right-arrow{
+  float:right;
+  margin-right:7px;
+}
+.navbar .disabled{
+  display:none;
+}
