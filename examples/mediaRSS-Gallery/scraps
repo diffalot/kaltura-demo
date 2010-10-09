@@ -1,0 +1,207 @@
+  'poster_135' => "http://openvideoalliance.org/video-content/assets/s_traditional.jpg",
+  'poster_270' => "http://openvideoalliance.org/video-content/assets/traditional.jpg",
+  'video_m4v_360' => "http://openvideoalliance.org/video-content/http://openvideoalliance.org/video-content/assets/$entry_id.mts-mp424-360.MP4",
+  'video_ogv_360' => "http://openvideoalliance.org/video-content/http://openvideoalliance.org/video-content/assets/$entry_id.mts-ogv24-360.OGV"  
+);
+
+$videos_4 = array();
+$entry_id = '';
+$videos_4[] = array(
+  'title' => 'Emerging Video Art',
+  'description' => 'Two leading figures from the art and technology world will discuss the role that open video has to play in artistic creation, and specific projects that embody this. Tribe, a preeminent video artist, will discuss his Port Huron project, and Cornell, Executive Director of Rhizome, will focus on how remix culture and free expression are synonymous with artistic video creation.
+  speaker: Lauren Cornell — Executive Director, Rhizome and Adjunct Curator, The New Museum 
+  speaker: Mark Tribe — Artist and Professor, Brown University',
+  'poster_135' => "http://openvideoalliance.org/video-content/assets/s_art.jpg",
+  'poster_270' => "http://openvideoalliance.org/video-content/assets/art.jpg",
+  'video_m4v_360' => "http://openvideoalliance.org/video-content/http://openvideoalliance.org/video-content/assets/$entry_id.mts-mp424-360.MP4",
+  'video_ogv_360' => "http://openvideoalliance.org/video-content/http://openvideoalliance.org/video-content/assets/$entry_id.mts-ogv24-360.OGV"  
+);
+
+$entry_id = '';
+$videos_4[] = array(
+  'title' => 'Purefold an Open Media Franchise by Ridley Scott: Featured Talk',
+  'description' => 'Ridley Scott is involved a new production called Purefold, which will be done in five separate 10-minute installments. The story is set shortly before 2019 (right ahead of the Blade Runner story). “It’s actually based on the same themes as Blade Runner,” series co-producer David Bausola told The New York Times. “It’s the search for what it means to be human and understanding the notion of empathy.” The series will be licensed with Creative Commons. 
+  speaker: David Bausola — Co-Producer, Purefold ',
+  'poster_135' => "http://openvideoalliance.org/video-content/assets/s_purefold.jpg",
+  'poster_270' => "http://openvideoalliance.org/video-content/assets/purefold.jpg",
+  'video_m4v_360' => "http://openvideoalliance.org/video-content/http://openvideoalliance.org/video-content/assets/$entry_id.mts-mp424-360.MP4",
+  'video_ogv_360' => "http://openvideoalliance.org/video-content/http://openvideoalliance.org/video-content/assets/$entry_id.mts-ogv24-360.OGV"  
+);
+
+$entry_id = '';
+$videos_4[] = array(
+  'title' => 'The Evolution of Storytelling',
+  'description' => 'Ted Hope producer of (21 Grams, The Ice Storm, Adventureland) and writer/director Lance Weiler (The Last Broadcast, Head Trauma) discuss how technology is impacting the art and craft of storytelling. As the industry shifts and audiences move from passive to active collaborators how does the art of storytelling change. What will emerge as new formats and how will they be funded and distributed? 
+  speaker: Ted Hope — Film Producer (of nearly sixty features including 21 Grams and Adventureland) 
+  speaker: Lance Weiler — Filmmaker and Co-founder, WorkBook Project',
+  'poster_135' => "http://openvideoalliance.org/video-content/assets/s_evolutionstorytelling.jpg",
+  'poster_270' => "http://openvideoalliance.org/video-content/assets/evolutionstorytelling.jpg",
+  'video_m4v_360' => "http://openvideoalliance.org/video-content/http://openvideoalliance.org/video-content/assets/$entry_id.mts-mp424-360.MP4",
+  'video_ogv_360' => "http://openvideoalliance.org/video-content/http://openvideoalliance.org/video-content/assets/$entry_id.mts-ogv24-360.OGV"  
+);
+
+$entry_id = '';
+$videos_4[] = array(
+  'title' => 'Xeni Jardin',
+  'description' => 'A description field',
+  'poster_135' => "http://openvideoalliance.org/video-content/assets/s_x.jpg",
+  'poster_270' => "",
+  'video_m4v_360' => "http://openvideoalliance.org/video-content/http://openvideoalliance.org/video-content/assets/$entry_id.mts-mp424-360.MP4",
+  'video_ogv_360' => "http://openvideoalliance.org/video-content/http://openvideoalliance.org/video-content/assets/$entry_id.mts-ogv24-360.OGV"  
+);
+
+$entry_id = '';
+$videos_4[] = array(
+  'title' => 'Xeni Jardin',
+  'description' => 'A description field',
+  'poster_135' => "",
+  'poster_270' => "",
+  'video_m4v_360' => "http://openvideoalliance.org/video-content/http://openvideoalliance.org/video-content/assets/$entry_id.mts-mp424-360.MP4",
+  'video_ogv_360' => "http://openvideoalliance.org/video-content/http://openvideoalliance.org/video-content/assets/$entry_id.mts-ogv24-360.OGV"  
+);
+
+$entry_id = '';
+$videos_4[] = array(
+  'title' => 'Xeni Jardin',
+  'description' => 'A description field',
+  'poster_135' => "",
+  'poster_270' => "",
+  'video_m4v_360' => "http://openvideoalliance.org/video-content/http://openvideoalliance.org/video-content/assets/$entry_id.mts-mp424-360.MP4",
+  'video_ogv_360' => "http://openvideoalliance.org/video-content/http://openvideoalliance.org/video-content/assets/$entry_id.mts-ogv24-360.OGV"  
+);
+
+$entry_id = '';
+$videos_4[] = array(
+  'title' => 'Xeni Jardin',
+  'description' => 'A description field',
+  'poster_135' => "",
+  'poster_270' => "",
+  'video_m4v_360' => "http://openvideoalliance.org/video-content/http://openvideoalliance.org/video-content/assets/$entry_id.mts-mp424-360.MP4",
+  'video_ogv_360' => "http://openvideoalliance.org/video-content/http://openvideoalliance.org/video-content/assets/$entry_id.mts-ogv24-360.OGV"  
+);
+
+$entry_id = '';
+$videos_4[] = array(
+  'title' => 'Xeni Jardin',
+  'description' => 'A description field',
+  'poster_135' => "",
+  'poster_270' => "",
+  'video_m4v_360' => "http://openvideoalliance.org/video-content/http://openvideoalliance.org/video-content/assets/$entry_id.mts-mp424-360.MP4",
+  'video_ogv_360' => "http://openvideoalliance.org/video-content/http://openvideoalliance.org/video-content/assets/$entry_id.mts-ogv24-360.OGV"  
+);
+
+$videos_5 = array();
+$entry_id = '';
+$videos_5[] = array(
+  'title' => 'Xeni Jardin',
+  'description' => 'A description field',
+  'poster_135' => "",
+  'poster_270' => "",
+  'video_m4v_360' => "http://openvideoalliance.org/video-content/http://openvideoalliance.org/video-content/assets/$entry_id.mts-mp424-360.MP4",
+  'video_ogv_360' => "http://openvideoalliance.org/video-content/http://openvideoalliance.org/video-content/assets/$entry_id.mts-ogv24-360.OGV"  
+);
+
+$entry_id = '';
+$videos_5[] = array(
+  'title' => 'Xeni Jardin',
+  'description' => 'A description field',
+  'poster_135' => "",
+  'poster_270' => "",
+  'video_m4v_360' => "http://openvideoalliance.org/video-content/http://openvideoalliance.org/video-content/assets/$entry_id.mts-mp424-360.MP4",
+  'video_ogv_360' => "http://openvideoalliance.org/video-content/http://openvideoalliance.org/video-content/assets/$entry_id.mts-ogv24-360.OGV"  
+);
+
+$entry_id = '';
+$videos_5[] = array(
+  'title' => 'Xeni Jardin',
+  'description' => 'A description field',
+  'poster_135' => "",
+  'poster_270' => "",
+  'video_m4v_360' => "http://openvideoalliance.org/video-content/http://openvideoalliance.org/video-content/assets/$entry_id.mts-mp424-360.MP4",
+  'video_ogv_360' => "http://openvideoalliance.org/video-content/http://openvideoalliance.org/video-content/assets/$entry_id.mts-ogv24-360.OGV"    
+);
+
+$entry_id = '';
+$videos_5[] = array(
+  'title' => 'Xeni Jardin',
+  'description' => 'A description field',
+  'poster_135' => "",
+  'poster_270' => "",
+  'video_m4v_360' => "http://openvideoalliance.org/video-content/http://openvideoalliance.org/video-content/assets/$entry_id.mts-mp424-360.MP4",
+  'video_ogv_360' => "http://openvideoalliance.org/video-content/http://openvideoalliance.org/video-content/assets/$entry_id.mts-ogv24-360.OGV"      
+);
+
+$entry_id = '';
+$videos_5[] = array(
+  'title' => 'Xeni Jardin',
+  'description' => 'A description field',
+  'poster_135' => "",
+  'poster_270' => "",
+  'video_m4v_360' => "http://openvideoalliance.org/video-content/http://openvideoalliance.org/video-content/assets/$entry_id.mts-mp424-360.MP4",
+  'video_ogv_360' => "http://openvideoalliance.org/video-content/http://openvideoalliance.org/video-content/assets/$entry_id.mts-ogv24-360.OGV"    
+);
+
+$entry_id = '';
+$videos_5[] = array(
+  'title' => 'Xeni Jardin',
+  'description' => 'A description field',
+  'poster_135' => "",
+  'poster_270' => "",
+  'video_m4v_360' => "http://openvideoalliance.org/video-content/http://openvideoalliance.org/video-content/assets/$entry_id.mts-mp424-360.MP4",
+  'video_ogv_360' => "http://openvideoalliance.org/video-content/http://openvideoalliance.org/video-content/assets/$entry_id.mts-ogv24-360.OGV"    
+);
+
+$entry_id = '';
+$videos_5[] = array(
+  'title' => 'Xeni Jardin',
+  'description' => 'A description field',
+  'poster_135' => "",
+  'poster_270' => "",
+  'video_m4v_360' => "http://openvideoalliance.org/video-content/http://openvideoalliance.org/video-content/assets/$entry_id.mts-mp424-360.MP4",
+  'video_ogv_360' => "http://openvideoalliance.org/video-content/http://openvideoalliance.org/video-content/assets/$entry_id.mts-ogv24-360.OGV"    
+);
+
+$entry_id = '';
+$videos_5[] = array(
+  'title' => 'Xeni Jardin',
+  'description' => 'A description field',
+  'poster_135' => "",
+  'poster_270' => "",
+  'video_m4v_360' => "http://openvideoalliance.org/video-content/http://openvideoalliance.org/video-content/assets/$entry_id.mts-mp424-360.MP4",
+  'video_ogv_360' => "http://openvideoalliance.org/video-content/http://openvideoalliance.org/video-content/assets/$entry_id.mts-ogv24-360.OGV"    
+);
+
+$entry_id = '';
+$videos_5[] = array(
+  'title' => 'Xeni Jardin',
+  'description' => 'A description field',
+  'poster_135' => "",
+  'poster_270' => "",
+  'video_m4v_360' => "http://openvideoalliance.org/video-content/http://openvideoalliance.org/video-content/assets/$entry_id.mts-mp424-360.MP4",
+  'video_ogv_360' => "http://openvideoalliance.org/video-content/http://openvideoalliance.org/video-content/assets/$entry_id.mts-ogv24-360.OGV"      
+);
+
+$videos_6 = array();
+$entry_id = '';
+$videos_6[] = array(
+  'title' => 'Xeni Jardin',
+  'description' => 'A description field',
+  'poster_135' => "",
+  'poster_270' => "",
+  'video_m4v_360' => "http://openvideoalliance.org/video-content/http://openvideoalliance.org/video-content/assets/$entry_id.mts-mp424-360.MP4",
+  'video_ogv_360' => "http://openvideoalliance.org/video-content/http://openvideoalliance.org/video-content/assets/$entry_id.mts-ogv24-360.OGV"  
+);
+
+$entry_id = '';
+$videos_6[] = array(
+  'title' => 'Xeni Jardin',
+  'description' => 'A description field',
+  'poster_135' => "",
+  'poster_270' => "",
+  'video_m4v_360' => "http://openvideoalliance.org/video-content/http://openvideoalliance.org/video-content/assets/$entry_id.mts-mp424-360.MP4",
+  'video_ogv_360' => "http://openvideoalliance.org/video-content/http://openvideoalliance.org/video-content/assets/$entry_id.mts-ogv24-360.OGV"      
+
+
+);
+
+?>

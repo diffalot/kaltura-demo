@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Player Api Demo</title>
+	<script type="text/javascript" src="http://html5.kaltura.org/js"></script>
+</head>
+<script type="text/javascript">
+mw.ready( function(){
+	//update the player and selected src
+	function updateTypeLoop(){
+		var vid =  $j('#vid1').get(0);
+		if( vid.mediaElement && vid.mediaElement.selectedSource ){
+			$j('#format').text( vid.mediaElement.selectedSource.getTitle() );
+		}
+		if( vid.selectedPlayer ) {
+			$j('#playertitle').text( vid.selectedPlayer.getName() );
+		}
+		setTimeout(updateTypeLoop, 1000);
+	}
+	setTimeout(updateTypeLoop, 1000);
+	// Chose Player
+	$j('#chooseplayer').click(function(){
+		var vid =  $j('#vid1').get(0);
+		if( vid ){
+			vid.controlBuilder.displayOverlay(  
+				vid.controlBuilder.getPlayerSelect()
+			);						
+		}
+	});
+	// Options boxes 
+	
+	
+});
+</script>
+<body>
+<h3> Sample Player Config:</h3>
+<div style="position:absolute; left: 500px; height:700px; width:300px; background: #eee; border:solid thin black">
+	<table style="font-size:.8em">
+	<tr>
+		<td colspan="2">
+			<a href="#" id="chooseplayer">Choose Player</a>
+		</td>
+	</tr>
+	<tr>
+		<td width="100">Format: </td>
+		<td id="format" style="font-style:italic"> </td> 		
+	</tr>
+	<tr>
+		<td width="100">Player:</td>
+		<td id="playertitle" style="font-style:italic"> </td>
+	</tr>
+	
+	
+	<tr>
+		<td colspan="2">
+			<b>Player Options</b>
+		</td>		
+	</tr>
+	<tr>
+		<td width="100">Autoplay: </td>
+		<td id="format" style="font-style:italic"> </td> 		
+	</tr>
+			
+	</table>
+</div>
+
+<div style="width:500px;height:300px;display:block;position:relative">
+	<video id="vid1" width="480" height="267" 
+	 poster="http://cdn.kaltura.org/apis/html5lib/kplayer-examples/media/bbb480.jpg"
+	 durationHint="33">
+		<source	src="http://cdn.kaltura.org/apis/html5lib/kplayer-examples/media/bbb_trailer_iphone.m4v"/>
+		<source src="http://cdn.kaltura.org/apis/html5lib/kplayer-examples/media/bbb400p.ogv" />
+	</video>
+</div>
+	
+</body>
+</html>
+
