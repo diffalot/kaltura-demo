@@ -16,6 +16,14 @@ difficulty:      1,
     sourceURL:   "" 
   }, { 
 */
+   name:        "Green Screen in Canvas",
+difficulty:      1,
+    docs:        "docs/.markdown",
+
+    slug:        "from [Paul Rouget](http://people.mozilla.com/~prouget/demos/green/green.xhtml)",
+    key:         "greenscreen",
+    sourceURL:   "examples-paulrouget/green.xhtml"
+  }, {
    name:        "HTML5 Player with Flash Fallback",
 difficulty:      1,
     docs:        "docs/.markdown",
